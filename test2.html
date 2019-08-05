@@ -1,0 +1,72 @@
+
+<html lang="en">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Document</title>
+   
+     <link rel="stylesheet" href=" https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js" ></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ 
+
+
+<script>
+                var json = 
+                {
+                    Id:3, 
+                    title: "總裁",
+                     name:"David",
+                     address:"新竹市大同區二三五路四號六樓",
+                     Memo:"澳洲來的客人",
+                     PictureURL:"https://i.imgur.com/uxvy97n.png",
+                     Phone:"0912345678"
+                };
+                
+            function Binding() {
+                new Vue(
+                    {
+                        el: '#block1',
+                        data: json
+                    }
+                );
+            }
+            $(document).ready(function () {
+                Binding();
+               
+            });
+        
+        </script>
+<body>
+        
+        <div id="block1" class="row" style="margin: 10px">
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-6">
+                            <h5>資料編號:{{Id}}</h5>
+                            <label>職稱:</label>
+                            <input class="form-control" type="text" v-model="title" />
+                            <label>姓名:</label>
+                            <input class="form-control" type="text" v-model="name"  />
+                            <label>Phone:</label>
+                            <input class="form-control" type="text" v-model="Phone" />
+                        </div>
+                        <div class="col-6">
+                            <img class="img-responsive pull-right" style="width: 200px" v-bind:src="PictureURL" />
+                        </div>
+                    </div>
+                    <label>Address:</label>
+                    <input class="form-control" type="text" v-model="address" />
+                    <label>Memo:</label>
+                    <textarea class="form-control" v-model="Memo"></textarea>
+                </div>
+            </div>
+        
+                    
+
+</body>
+      
+
+</html>
